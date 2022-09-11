@@ -39,11 +39,11 @@ runnable  monk-tensorflow/tensorflow  local       -        -
 ## Deploy Stack
 ```bash
 foo@bar:~$ monk run monk-tensorflow/tensorflow
-? Select tag to run [local/monk-postgresql-cluster/stack] on: postgres
-✔ Starting the job: local/monk-postgresql-cluster/stack... DONE
-✔ Preparing nodes DONE
-✔ Checking/pulling images...
-Started local/monk-tensorflow/tensorflow
+? Select tag to run [local/monk-tensorflow/tensorflow] on: mnk
+✔ [================================================] 100% tensorflow/tensorflow:latest-jupyter mnk-1
+✔ [================================================] 100% alpine:latest mnk-1
+✔ Checking/pulling images DONE
+✔ Started local/monk-tensorflow/tensorflow
 
 🔩 templates/local/monk-tensorflow/tensorflow
  └─🧊 Peer mnk-1
