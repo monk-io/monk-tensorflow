@@ -1,0 +1,32 @@
+namespace: monk-tensorflow 
+
+tensorflow: 
+  defines: runnable
+  variables:
+    tensorflow_notebooks_volume_size:
+      value: 60
+    monk_tensorflow_port:
+      value: 8888
+      type: string
+    monk_image_tag:
+      value: latest-jupyter
+    volume_data:
+        type: string
+        value: <- `${monk-volume-path}`
+  # volumes:
+  #   important-data:
+  #       size: <- $tensorflow_notebooks_volume_size
+  #       kind: SSD
+  #       path: <- $volume_data
+  containers:
+    monk-tensorflow:
+      paths:
+        - <- `${volume_data}/notebooks:/tf/notebooks`
+      ports:
+        - <- `0.0.0.0:${monk_tensorflow_port}:8888`
+      image: tensorflow/tensorflow
+      # bash: sleep 3600
+      image-tag: <- `${monk_image_tag}`
+    monk-alp:
+      image: alpine
+      bash: sleep 3600
