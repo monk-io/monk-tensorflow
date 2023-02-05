@@ -17,49 +17,49 @@ not connected to cluster
 
 ## Clone Repository
 ```bash
-git clone https://github.com/Burakhan/monk-tensorflow
+git clone https://github.com/monk-io/tensorflow
 ```
 
 ## Load Template
 ```bash
-cd monk-tensorflow
+cd tensorflow
 monk load MANIFEST
 ```
 
 
 #### Let's take a look at the themes I have installed.
 ```bash
-foo@bar:~$ monk list monk-tensorflow
+foo@bar:~$ monk list tensorflow
 ✔ Got the list
 Type      Template                    Repository  Version  Tags
-runnable  monk-tensorflow/tensorflow  local       -        -
+runnable  tensorflow/tensorflow  local       -        -
 
 ```
 
 ## Deploy Stack
 ```bash
-foo@bar:~$ monk run monk-tensorflow/tensorflow
-? Select tag to run [local/monk-tensorflow/tensorflow] on: mnk
+foo@bar:~$ monk run tensorflow/tensorflow
+? Select tag to run [local/tensorflow/tensorflow] on: mnk
 ✔ [================================================] 100% tensorflow/tensorflow:latest-jupyter mnk-1
 ✔ [================================================] 100% alpine:latest mnk-1
 ✔ Checking/pulling images DONE
-✔ Started local/monk-tensorflow/tensorflow
+✔ Started local/tensorflow/tensorflow
 
-🔩 templates/local/monk-tensorflow/tensorflow
+🔩 templates/local/tensorflow/tensorflow
  └─🧊 Peer mnk-1
-    ├─🔩 templates/local/monk-tensorflow/tensorflow
+    ├─🔩 templates/local/tensorflow/tensorflow
     │  └─📦 d26b93f8826f9aafafd07b11b13c0b86-tensorflow-tensorflow-monk-alp
     │     └─🧩 alpine:latest
-    └─🔩 templates/local/monk-tensorflow/tensorflow
-       └─📦 022273279b4c7ffd2ac42da74dfbbe00-low-tensorflow-monk-tensorflow
+    └─🔩 templates/local/tensorflow/tensorflow
+       └─📦 022273279b4c7ffd2ac42da74dfbbe00-low-tensorflow-tensorflow
           ├─🧩 tensorflow/tensorflow:latest-jupyter
           ├─💾 /var/lib/monkd/volumes/notebooks -> /tf/notebooks
           └─🔌 open 16.171.45.206:8888 (0.0.0.0:8888) -> 8888
 
 💡 You can inspect and manage your above stack with these commands:
-        monk logs (-f) local/monk-tensorflow/tensorflow - Inspect logs
-        monk shell     local/monk-tensorflow/tensorflow - Connect to the container's shell
-        monk do        local/monk-tensorflow/tensorflow/action_name - Run defined action (if exists)
+        monk logs (-f) local/tensorflow/tensorflow - Inspect logs
+        monk shell     local/tensorflow/tensorflow - Connect to the container's shell
+        monk do        local/tensorflow/tensorflow/action_name - Run defined action (if exists)
 💡 Check monk help for more!
 ```
 

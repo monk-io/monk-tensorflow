@@ -1,4 +1,4 @@
-namespace: monk-tensorflow 
+namespace: tensorflow 
 
 metadata:
   website: https://www.tensorflow.org/
@@ -19,7 +19,7 @@ tensorflow:
         type: string
         value: <- `${monk-volume-path}`
   containers:
-    monk-tensorflow:
+    tensorflow:
       paths:
         - <- `${volume_data}/notebooks:/tf/notebooks`
       ports:
