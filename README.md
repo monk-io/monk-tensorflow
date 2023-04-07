@@ -1,13 +1,16 @@
 # Tensorflow & Monk
+
 This repository contains Monk.io template to deploy Tensorflow either locally or on cloud of your choice (AWS, GCP, Azure, Digital Ocean).
 
-# Prerequisites
+## Prerequisites
+
 - [Install Monk](https://docs.monk.io/docs/get-monk)
 - [Register and Login Monk](https://docs.monk.io/docs/acc-and-auth)
 - [Add Cloud Provider](https://docs.monk.io/docs/cloud-provider)
 - [Add Instance](https://docs.monk.io/docs/multi-cloud)
 
-#### Make sure monkd is running.
+## Make sure monkd is running
+
 ```bash
 foo@bar:~$ monk status
 daemon: ready
@@ -16,18 +19,20 @@ not connected to cluster
 ```
 
 ## Clone Repository
+
 ```bash
 git clone https://github.com/monk-io/tensorflow
 ```
 
 ## Load Template
+
 ```bash
 cd tensorflow
 monk load MANIFEST
 ```
 
+## Let's take a look at the themes I have installed
 
-#### Let's take a look at the themes I have installed.
 ```bash
 foo@bar:~$ monk list tensorflow
 ✔ Got the list
@@ -37,6 +42,7 @@ runnable  tensorflow/tensorflow  local       -        -
 ```
 
 ## Deploy Stack
+
 ```bash
 foo@bar:~$ monk run tensorflow/tensorflow
 ? Select tag to run [local/tensorflow/tensorflow] on: mnk
@@ -63,19 +69,14 @@ foo@bar:~$ monk run tensorflow/tensorflow
 💡 Check monk help for more!
 ```
 
-
 ## Variables
+
 The variables are in `tensorflow.yml` file. You can quickly setup by editing the values here.
 
-| Variable                     	| Description                               	|
-|------------------------------	|-------------------------------------------	|
-| monk_tensorflow_port          | Jupyter Port, Default: 8888 	               |
-| monk_image_tag             	| Image tag, Default latest-jupyter                      	|
-| volume_data             	    | Notebooks path                      	|
-
-
-## 
-You can view the token information you need to log in with the `monk logs` command.
+| Variable             | Description  | Default        |
+| -------------------- | ------------ | -------------- |
+| monk_tensorflow_port | Jupyter Port | 8888           |
+| monk_image_tag       | Image tag    | latest-jupyter |
 
 ## Stop, remove and clean up workloads and templates
 

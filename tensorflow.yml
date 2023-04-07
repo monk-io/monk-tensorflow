@@ -1,27 +1,27 @@
-namespace: tensorflow 
+---
+namespace: tensorflow
 
-metadata:
-  website: https://www.tensorflow.org/
-  name: Tensorflow
-  icon: https://www.gstatic.com/devrel-devsite/prod/v93aa752e9f55c4cc8215e0e532a81ea927c78afc7539799b3f76c27a68eb319c/tensorflow/images/lockup.svg
-  publisher: monk.io
-  description: Tensorflow image for monk
-
-tensorflow: 
+tensorflow:
   defines: runnable
+  metadata:
+    website: https://www.tensorflow.org/
+    name: Tensorflow
+    icon: https://www.gstatic.com/devrel-devsite/prod/v93aa752e9f55c4cc8215e0e532a81ea927c78afc7539799b3f76c27a68eb319c/tensorflow/images/lockup.svg
+    publisher: monk.io
+    description: |
+      TensorFlow is an open-source software library for dataflow and differentiable programming across a range of tasks. It is a powerful tool for building and training machine learning models, particularly deep neural networks, and is widely used in research and industry.
+      TensorFlow provides a flexible and efficient platform for implementing and experimenting with a wide range of machine learning algorithms, from simple linear models to complex deep learning architectures. It also offers a range of tools for data preprocessing, visualization, and evaluation, making it a comprehensive solution for machine learning tasks.
+      With its ease of use, scalability, and versatility, TensorFlow has become one of the most popular and widely used machine learning libraries in the world.
   variables:
     monk_tensorflow_port:
       value: 8888
       type: string
     monk_image_tag:
       value: latest-jupyter
-    volume_data:
-        type: string
-        value: <- `${monk-volume-path}`
   containers:
     tensorflow:
       paths:
-        - <- `${volume_data}/notebooks:/tf/notebooks`
+        - <- `${monk-volume-path}/tensorflow/notebooks:/tf/notebooks`
       ports:
         - <- `0.0.0.0:${monk_tensorflow_port}:8888`
       image: tensorflow/tensorflow
