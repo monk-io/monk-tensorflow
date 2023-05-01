@@ -20,9 +20,5 @@ tensorflow:
       value: latest-jupyter
   containers:
     tensorflow:
-      paths:
-        - <- `${monk-volume-path}/tensorflow/notebooks:/tf/notebooks`
-      ports:
-        - <- `0.0.0.0:${monk_tensorflow_port}:8888`
       image: tensorflow/tensorflow
       image-tag: <- `${monk_image_tag}`
