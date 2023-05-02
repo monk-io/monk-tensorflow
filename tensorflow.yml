@@ -22,3 +22,10 @@ tensorflow:
     tensorflow:
       image: tensorflow/tensorflow
       image-tag: <- `${monk_image_tag}`
+  services:
+    tensorflow-svc:
+      container: tensorflow
+      port: 8888
+      protocol: tcp
+      host-port: <- `${monk_tensorflow_port}`
+
